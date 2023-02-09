@@ -16,7 +16,6 @@ spec:
   ignoreDifferences:
 {{ toYaml (index $.Values $chartName).ignoreDifferences | indent 4 }}
   {{- end }}
-  {{- if not (index $.Values $chartName).disableAutoSync }}
   syncPolicy:
     automated:
       prune: true
@@ -24,7 +23,6 @@ spec:
       allowEmpty: true
     syncOptions:
           - CreateNamespace=true
-  {{- end }}
   destination:
     server: https://kubernetes.default.svc
     namespace: {{ $chartName }}
