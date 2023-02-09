@@ -22,12 +22,14 @@ spec:
       prune: true
       selfHeal: true
       allowEmpty: true
+    syncOptions:
+          - CreateNamespace=true
   {{- end }}
     syncOptions:
       - CreateNamespace=true
   destination:
     server: https://kubernetes.default.svc
-    namespace: {{ (index $.Values $chartName).namespace }}
+    namespace: {{ $chartName }}
   source:
     repoURL: {{ $.Values.global.source.repoURL }}
     targetRevision: {{ $.Values.global.source.targetRevision }}
