@@ -10,7 +10,7 @@ metadata:
     helmParametersChecksum: {{ (print (index $.Values $chartName).helm) | sha256sum}}
     {{- end }}
 spec:
-  project: {{ $.Values.global.projectName}}
+  project: default
   revisionHistoryLimit: 3
   {{- if (index $.Values $chartName).ignoreDifferences }}
   ignoreDifferences:
