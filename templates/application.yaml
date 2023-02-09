@@ -29,6 +29,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: {{ $chartName }}
   source:
+    path: apps/{{ $chartName }}
     repoURL: {{ $.Values.global.source.repoURL }}
     targetRevision: {{ $.Values.global.source.targetRevision }}
     helm:
