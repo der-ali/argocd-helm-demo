@@ -30,5 +30,8 @@ spec:
     path: apps/{{ $chartName }}
     repoURL: {{ $.Values.global.source.repoURL }}
     targetRevision: {{ $.Values.global.source.targetRevision }}
+    helm:
+      valueFiles:
+        - values.yaml
 ---
 {{- end }}
