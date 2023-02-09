@@ -1,0 +1,13 @@
+global:
+  stage: dev
+  projectName: infrastructure-charts
+  source:
+    repoURL: "https://github.com/der-ali/argocd-helm-demo.git"
+    targetRevision: main
+nginx-controller:
+    controller:
+      service:
+        type: NodePort
+        nodePorts:
+          http: 30080
+          https: 30443

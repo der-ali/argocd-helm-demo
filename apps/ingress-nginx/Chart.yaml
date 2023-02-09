@@ -1,0 +1,13 @@
+apiVersion: v2
+name: ingress-nginx-local
+# When the version is modified, make sure the artifacthub.io/changes list is updated
+# Also update CHANGELOG.md
+version: 0.1
+appVersion: 1.5.1
+keywords:
+  - ingress
+  - nginx
+sources:
+  - https://github.com/kubernetes/ingress-nginx
+engine: gotpl
+kubeVersion: ">=1.20.0-0"
