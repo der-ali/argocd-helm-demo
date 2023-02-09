@@ -4,7 +4,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ $chartName }}
-  namespace: argocd
+  namespace: argo-cd
   annotations:
     {{- if (index $.Values $chartName).helm }}
     helmParametersChecksum: {{ (print (index $.Values $chartName).helm) | sha256sum}}
@@ -25,8 +25,6 @@ spec:
     syncOptions:
           - CreateNamespace=true
   {{- end }}
-    syncOptions:
-      - CreateNamespace=true
   destination:
     server: https://kubernetes.default.svc
     namespace: {{ $chartName }}
