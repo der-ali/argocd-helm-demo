@@ -7,7 +7,5 @@ appVersion: 1.5.1
 keywords:
   - ingress
   - nginx
-sources:
-  - https://github.com/kubernetes/ingress-nginx
-engine: gotpl
-kubeVersion: ">=1.20.0-0"
+- name: ingress-nginx
+  repository: https://kubernetes.github.io/ingress-nginx
