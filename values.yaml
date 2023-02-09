@@ -1,5 +1,4 @@
 global:
-  stage: dev
   projectName: infrastructure-charts
   source:
     repoURL: "https://github.com/der-ali/argocd-helm-demo.git"

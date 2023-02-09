@@ -33,9 +33,9 @@ spec:
   source:
     repoURL: {{ $.Values.global.source.repoURL }}
     targetRevision: {{ $.Values.global.source.targetRevision }}
-    {{- if (index $.Values $chartName).helm }}
     helm:
-    {{- toYaml  (index $.Values $chartName).helm | nindent 6 | replace "$STAGE" $.Values.global.stage }}
-    {{- end }}
+      valueFiles:
+      - values.yaml
+
 ---
 {{- end }}
