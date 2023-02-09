@@ -3,5 +3,5 @@ ingress-nginx:
     service:
       type: NodePort
       nodePorts:
-        http: 20080
-        https: 20443
+        http: 31080
+        https: 31443
